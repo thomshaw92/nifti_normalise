@@ -1,5 +1,5 @@
-# niifti_normalise
-A script to normalise niifti (.nii .nii.gz) images using two PcTs and clamp to 0-100.
+# nifti_normalise
+A script to normalise nifti (.nii .nii.gz) images using two PcTs and clamp to 0-100.
 Uses fslmaths and fslstats.
 
 You must have FSL on your path (https://fsl.fmrib.ox.ac.uk/fsl/).
@@ -7,7 +7,7 @@ You must have FSL on your path (https://fsl.fmrib.ox.ac.uk/fsl/).
 
 Usage:
 ```bash 
-niifti_normalise.sh -i INPUT.nii.gz -o OUTPUT.nii.gz 
+nifti_normalise.sh -i INPUT.nii.gz -o OUTPUT.nii.gz 
 ```
 
 Compulsory arguments:
