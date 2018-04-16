@@ -16,14 +16,13 @@ Niifti Normalise for normalising niifti images between two PcTs (set at 99.99 an
 You must have FSL on your path.
 
 Compulsory arguments:
--o: OutputFile: in nii format (USE FULL PATH)
 -i: InputImage: in nii format (USE FULL PATH)
+-o: OutputFile: in nii format (USE FULL PATH)
+
 
 Optional arguments:
 -b: keep all intermediate files 0 = off 1 = on (default = 0)
 -h: print this help screen
-
-Arguments must be parsed in this order
 
 Send issues and comments to thomasbasilshaw@gmail.com
 USAGE
