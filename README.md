@@ -3,7 +3,10 @@ A script to normalise niifti (.nii .nii.gz) images using two PcTs and clamp to 0
 Uses fslmaths and fslstats.
 You must have FSL on your path (https://fsl.fmrib.ox.ac.uk/fsl/).
 
-Usage: niifti_normalise.sh -i INPUT.nii.gz -o OUTPUT.nii.gz
+Usage:
+```bash 
+niifti_normalise.sh -i INPUT.nii.gz -o OUTPUT.nii.gz 
+```
 
 Compulsory arguments:
 -i: InputImage: in nii/nii.gz format (USE FULL PATH)
