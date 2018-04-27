@@ -10,7 +10,7 @@ trap control_c SIGINT
 function Usage {
     cat <<USAGE
 Usage:
-`basename $0` -i InputImage -o OutputImage <other options>
+`basename $0` -i InputImage (full path) -o OutputImage (full path) <other options>
 
 Nifti Normalise for normalising nifti images between two PcTs (set at 99.99 and 0.01)
 You must have FSL on your path.
@@ -69,7 +69,6 @@ if [[ $nargs -lt 2 ]]
 then
     Usage >&2
 fi
-subjName=$INPUT
 cwd=`pwd`
 mkdir $cwd/NiiNormTemp
 NII_DIR="$cwd/NiiNormTemp"
@@ -87,7 +86,15 @@ control_c()
     cleanup
     exit 1
 }
-
+if [[ ! -e ${INPUT} ]] ; then
+    ${INPUT}=$PWD/$INPUT
+    fi
+if [[ ! -e ${INPUT} ]] ; then
+    echo "can't find your file, check the path"
+    exit 
+fi
+    
+fi
 if [[ ${INPUT:0 -6} == "nii.gz" ]] ; then cp ${INPUT} ${NII_DIR}/input.nii.gz 
 elif [[ ${INPUT:0 -3} == "nii" ]] ; then  gzip ${INPUT}
 					  cp ${INPUT}.gz ${NII_DIR}/input.nii.gz
@@ -137,4 +144,4 @@ if [[ ${CLEANUP} == 1 ]] ; then
     echo "no cleanup"
     mv ${NII_DIR} ./niiNormalise_${subjName:0: -4} 
 fi
-echo "Done. Normalised file is named $OUTPUT"
+echo "Done. Normalised file is named $OUTPUT - make sure you check the path"
