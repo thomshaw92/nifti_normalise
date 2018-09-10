@@ -93,8 +93,8 @@ if [[ ! -e ${INPUT} ]] ; then
     echo "can't find your file, check the path"
     exit 
 fi
-    
-fi
+   
+
 if [[ ${INPUT:0 -6} == "nii.gz" ]] ; then cp ${INPUT} ${NII_DIR}/input.nii.gz 
 elif [[ ${INPUT:0 -3} == "nii" ]] ; then  gzip ${INPUT}
 					  cp ${INPUT}.gz ${NII_DIR}/input.nii.gz
